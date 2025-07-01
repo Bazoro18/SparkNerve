@@ -7,9 +7,10 @@ from kafka import KafkaProducer
 
 #Setup Kafka
 producer = KafkaProducer(
-	bootstrap_servers='127.0.1.1:9092',
+	bootstrap_servers='localhost:9092',
 	value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
+count = 0
 
 #Simulated Order States
 statuses = ["Placed","Cancelled", "Delivered"]
@@ -18,6 +19,7 @@ customers = [f"CUST{str(i).zfill(4)}" for i in range(1,101)]
 
 #Live Order State for Update and Delete
 live_orders = {}
+global order_id
 def generate_order_event(op=None):
 	now = datetime.now(timezone.utc).isoformat()
 	#Generate Data
@@ -67,9 +69,13 @@ def stream_events():
 		op = random.choices(["I","U","D"], weights=[0.6,0.3,0.1])[0]
 		event = generate_order_event(op)
 		if event:
-			producer.send("orders-cdc",value=event)
-			print(f">>> {event}")
-		time.sleep(1)
+			producer.send("orders_cdc_v2",key=f"{event['op']}_{event['order_id']}".encode('utf-8'), value=event)
+			global count
+			count += 1
+		if count % 100 == 0:
+			print(f"[CDC Order Generator] Sent {count} events")
+			print(f"[Sent {count}] op={event['op']} key={event.get('order_id')} value={json.dumps(event)}")
+		time.sleep(0.05)
 
 if __name__ == "__main__":
 	print("CDC Order Generator Started...")
