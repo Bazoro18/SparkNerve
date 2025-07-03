@@ -1,0 +1,8 @@
+[
+    {"name": "supplier_id", "type": "string", "nullable": true},
+    {"name": "name", "type": "string", "nullable": true},
+    {"name": "contact_email", "type": "string", "nullable": true},
+    {"name": "country", "type": "string", "nullable": true},
+    {"name": "change_ts", "type": "string", "nullable": true},
+    {"name": "op", "type": "string", "nullable": true}
+]

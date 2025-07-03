@@ -1,0 +1,10 @@
+[
+    {"name": "shipment_id", "type": "string", "nullable": true},
+    {"name": "order_id", "type": "string", "nullable": true},
+    {"name": "carrier", "type": "string", "nullable": true},
+    {"name": "status", "type": "string", "nullable": true},
+    {"name": "expected_delivery", "type": "string", "nullable": true},
+    {"name": "change_ts", "type": "string", "nullable": true},
+    {"name": "op", "type": "string", "nullable": true}
+]
+  

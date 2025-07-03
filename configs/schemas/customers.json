@@ -1,0 +1,10 @@
+[
+    {"name": "customer_id", "type": "string", "nullable": true},
+    {"name": "name", "type": "string", "nullable": true},
+    {"name": "email", "type": "string", "nullable": true},
+    {"name": "phone", "type": "string", "nullable": true},
+    {"name": "country", "type": "string", "nullable": true},
+    {"name": "signup_date", "type": "string", "nullable": true},
+    {"name": "change_ts", "type": "string", "nullable": true},
+    {"name": "op", "type": "string", "nullable": true}
+]

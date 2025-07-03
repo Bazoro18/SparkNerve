@@ -1,0 +1,9 @@
+[
+    {"name": "product_id", "type": "string", "nullable": true},
+    {"name": "name", "type": "string", "nullable": true},
+    {"name": "category", "type": "string", "nullable": true},
+    {"name": "price", "type": "double", "nullable": true},
+    {"name": "supplier_id", "type": "string", "nullable": true},
+    {"name": "change_ts", "type": "string", "nullable": true},
+    {"name": "op", "type": "string", "nullable": true}
+]

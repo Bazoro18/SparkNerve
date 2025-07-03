@@ -1,0 +1,11 @@
+[
+    {"name": "order_id", "type": "string", "nullable": true},
+    {"name": "customer_id", "type": "string", "nullable": true},
+    {"name": "order_date", "type": "string", "nullable": true},
+    {"name": "order_amount", "type": "double", "nullable": true},
+    {"name": "currency", "type": "string", "nullable": true},
+    {"name": "payment_type", "type": "string", "nullable": true},
+    {"name": "status", "type": "string", "nullable": true},
+    {"name": "change_ts", "type": "string", "nullable": true},
+    {"name": "op", "type": "string", "nullable": true}
+]
